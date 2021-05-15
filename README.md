@@ -159,6 +159,20 @@ As well as the following flags to the compilation of the sources of the project 
     - `ft_strncmp` : Compares the first (at most) n bytes of s1 and s2. It returns an integer less than, equal to, or greater than zero if s1 is found, respectively, to be less than, to match, or be greater than s2.
 
 
+## Testing
+
+The project was tested with the *test/* files and with the following testers:
+ - For some functions:
+    - [libftTester](https://github.com/Tripouille/libftTester)
+    - [Libftest](https://github.com/jtoty/Libftest)
+    - [libft-unit-test](https://github.com/alelievr/libft-unit-test)
+ - For *get_next_line*:
+    - [gnlTester](https://github.com/Tripouille/gnlTester.git)
+    - [42TESTERS-GNL](https://github.com/Mazoise/42TESTERS-GNL)
+    - [42cursus_gnl_tests](https://github.com/mrjvs/42cursus_gnl_tests)
+
+Thanks to everyone who made these testers! Helped me a lot! :heart:
+
 ## Updating
 
 The project is updated regularly with new functions that could be useful for other projects, or when I learn something new, or when I realize my code looks awful. :wink:
