@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 01:48:25 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 18:03:31 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/05/15 19:32:48 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ short			ft_isnegative(void *n);
 short			ft_isnegative_float(void *n);
 int				ft_isnan(long double n);
 int				ft_isinf(long double n);
+int				ft_ispinf(long double n);
 int				ft_isninf(long double n);
 
 void			*ft_ternpt(int condition, void *val1, void *val2, short tofree);

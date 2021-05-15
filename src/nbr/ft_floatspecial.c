@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 09:51:24 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/14 16:41:02 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/05/15 19:32:07 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_isnan(long double n)
 ** @param:	- [long double] number to be checked
 ** @return:	[type] non 0 if inf, 0 if not
 */
-int	ft_isinf(long double n)
+int	ft_ispinf(long double n)
 {
 	return (n == (1.0L / 0.0L));
 }
@@ -38,4 +38,14 @@ int	ft_isinf(long double n)
 int	ft_isninf(long double n)
 {
 	return (n == (-1.0L / 0.0L));
+}
+
+/*
+** Checks if a number is infinite (inf or -inf).
+** @param:	- [long double] number to be checked
+** @return:	[type] non 0 if inf, 0 if not
+*/
+int	ft_isinf(long double n)
+{
+	return (n == (1.0L / 0.0L));
 }

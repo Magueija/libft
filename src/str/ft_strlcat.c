@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 03:01:05 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 17:20:57 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/05/15 19:40:52 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 **	the result (as long as there is at least one byte 
 **	free in dst). Note that a byte for the NUL should be 
 **	included in size. Both src and dst must be NUL-terminated. 
-**	(See libft/docs/strlcat_&_strlcpy_explained.pdf for more)
+**	(See libft/docs/strlcat_&_strlcpy_explained.pdf).
 ** @param:	- [char *] destination string
 **			- [const char *] the string to be added to the 
 **				end of dest

@@ -6,17 +6,17 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 02:19:45 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 17:31:57 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/05/15 19:19:50 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Iterates the list ’lst’ and applies the function 
-**	’f’ to the content of each element. Creates a new 
+** Iterates the list lst and applies the function 
+**	f to the content of each element. Creates a new 
 **	list resulting of the successive applications of 
-**	the function ’f’. The ’del’ function is used to 
+**	the function f. The del function is used to 
 **	delete the content of an element, if needed.
 ** @param:	- [t_list *]  pointer to an element
 **			- [void *(*)(void *)]  function used to iterate on

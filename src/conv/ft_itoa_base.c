@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:02:22 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 15:14:33 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/05/15 19:07:42 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static char
 }
 
 /*
-** Check if the base is valid; that is, not empty,
+** Check if the base is valid; that is, not empty, 
 **	and without signals and duplicate values.
 ** @param:	- [char *] base to be checked
 **			- [size_t *] base lenght

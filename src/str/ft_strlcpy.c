@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 03:01:26 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 17:21:12 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/05/15 19:40:58 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 **	the result (as long as size is larger than 0). Note 
 **	that a byte for the NUL should be included in size. 
 **	The string src must be NUL-terminated. 
-**	(See libft/docs/strlcat_&_strlcpy_explained.pdf for more)
+**	(See libft/docs/strlcat_&_strlcpy_explained.pdf).
 ** @param:	- [char *] destination string
 **			- [const char *] the string to be copied
 **			- [size_t] the size to copy
