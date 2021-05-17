@@ -177,7 +177,7 @@ Thanks to everyone who made these testers! Helped me a lot! :heart:
 
 The project is updated regularly with new functions that could be useful for other projects, or when I learn something new, or when I realize my code looks awful. :wink:
 
-All modifications must respect the [42 norm](https://github.com/42School/norminette/blob/27abedeee6f96b628372ad29031df002df937e63/pdf/en.norm.pdf).
+All modifications must respect the [42 norm](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
 ## Authors
 
   - **[Magueija](https://github.com/Magueija)**
