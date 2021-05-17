@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 17:30:06 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 18:16:05 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/05/17 16:04:06 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static int	ft_retval(ssize_t rd, char **line, char **str, char **temp)
 {
-	if (rd == EOF)
+	if (rd == FD_EOF)
 	{
 		*line = ft_strdup(*str);
 		ft_free((void **)str);
 		return (0);
 	}
-	else if (rd > EOF)
+	else if (rd > FD_EOF)
 		*line = ft_substr(*str, 0, (size_t)(ft_strchr(*str, '\n') - *str));
 	else
 	{
@@ -39,7 +39,7 @@ static int	ft_retval(ssize_t rd, char **line, char **str, char **temp)
 }
 
 /*
-** With a static variable, reads each line of a file until EOF. 
+** With a static variable, reads each line of a file until EOF (FD_EOF). 
 **	Every time this function is called it returns the next 
 **	line of the file. It can be used on multiple file 
 **	descriptors at the same time. The BUFFER_SIZE can be changed 
@@ -62,7 +62,7 @@ int	get_next_line(int fd, char **line)
 	if (str[fd] == NULL)
 		str[fd] = ft_calloc(1, sizeof(char));
 	rd = 1;
-	while (!ft_strchr(str[fd], '\n') && rd > EOF)
+	while (!ft_strchr(str[fd], '\n') && rd > FD_EOF)
 	{
 		rd = read(fd, buf, BUFFER_SIZE);
 		buf[rd] = 0;

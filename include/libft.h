@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 01:48:25 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 19:32:48 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/05/17 16:03:35 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define FD_STDOUT 2
 # define FD_STDERROR 3
 
-# define EOF 0
+# define FD_EOF 0
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
