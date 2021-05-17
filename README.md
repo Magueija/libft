@@ -12,6 +12,8 @@ make
 gcc -I./include -L./bin/ -lft main.c -o test
 ```
 
+<br />
+
 In future projects, the libft will be used by placing this libft folder in the projects folder. The libft.a library will be compiled at the same time as the project by adding the following rule to the Makefile :
 ```
 libft:
@@ -22,6 +24,20 @@ As well as the following flags to the compilation of the sources of the project 
 ```
 -I./libft/include -L./libft/bin/ -lft
 ```
+
+<br />
+
+All available **Makefile** commands :
+ - `make debug`       : creates *libft.a*, but with debug flags (-g -fsanitize=address);
+ - `make norm`        : checks the norm on all files or only for a folder like `make norm f=char`, [norminnette](https://github.com/42School/norminette/) needs to be installed;
+ - `make clean`       : removes all object files;
+ - `make fclean`      : removes all object files and *libft.a*;
+ - `make clean_dep`   : removes all dependencies files;
+ - `make clean_debug` : removes all debug files and folders;
+ - `make clean_all`   : equals to *make fclean* && *make clean_dep* && *make clean_debug*;
+ - `make re_debug`    : equals to *make fclean* && *make debug*;
+ - `make re`          : equals to *make fclean* && *make*;
+
 
 ## Available functions
 
