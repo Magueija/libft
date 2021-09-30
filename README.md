@@ -50,6 +50,7 @@ All available **Makefile** commands :
     - `ft_isblank`     : Checks for a blank character; that is, a space or a tab.
     - `ft_isinvisible` : Checks for an invisible character that fits into the ASCII character set.
     - `ft_isspace`     : Checks for white-space characters; these are: space, form-feed, newline, carriage return, horizontal tab, and vertical tab.
+	- `ft_issignal`    : Checks if a char is a plus(+) or a minus(-) signal.
     - `ft_islower`     : Checks for a lower-case letter.
     - `ft_isupper`     : Checks for an uppercase letter.
 
@@ -194,6 +195,7 @@ Thanks to everyone who made these testers! Helped me a lot! :heart:
 The project is updated regularly with new functions that could be useful for other projects, or when I learn something new, or when I realize my code looks awful. :wink:
 
 All modifications must respect the [42 norm](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf).
+
 ## Authors
 
   - **[Magueija](https://github.com/Magueija)**

@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 01:48:25 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/17 16:03:35 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/09/30 13:45:24 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int				ft_isprint(int c);
 int				ft_isblank(int c);
 int				ft_isinvisible(int c);
 int				ft_isspace(int c);
+int				ft_issignal(int c);
 int				ft_islower(int c);
 int				ft_isupper(int c);
 

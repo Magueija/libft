@@ -6,39 +6,23 @@
 #    By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/20 13:00:09 by tosilva           #+#    #+#              #
-#    Updated: 2021/05/14 17:30:40 by tosilva          ###   ########.fr        #
+#    Updated: 2021/09/30 14:46:41 by tosilva          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-##########################################################################################################################################
+################################################################################
 ## Variables
-##########################################################################################################################################
+################################################################################
 
-###########################################
-## Target
-###########################################
+########################################
+## Target							  ##
+########################################
 
 TARGET	=	libft.a
 
-###########################################
-## Commands & Flags
-###########################################
-
-CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra
-DEBFLAGS	= -g -fsanitize=address
-
-AR		= ar rcs
-
-NORM	= norminette
-NORM_COLORS	= sed -E "s/OK!/[32mOK!$/[0m/g;s/Warning(!|:)/[33mWarning\1$/[0m/g;s/Error(!|:)/[31mError\1$/[0m/g"
-
-MKDIR	= mkdir -p
-RM		= rm -fr
-
-###########################################
-## Folders & Files
-###########################################
+#########################################
+## Folders & Files					   ##
+#########################################
 
 		# Current dir
 CURRENT := ${shell pwd}/
@@ -73,16 +57,20 @@ ALL_DIRS	= $(CHAR_DIR) $(CONV_DIR) $(FILES_DIR) $(LST_DIR) $(MATH_DIR) $(MEM_DIR
 HFILES		:= libft.h
 CFILES		:=
 
-CHAR_FILES	:= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_isdigit.c ft_isinvisible.c ft_islower.c \
-				ft_isprint.c ft_isspace.c ft_isupper.c
-CONV_FILES	:= ft_atoi.c ft_etoa__2.c ft_etoa.c ft_ftoa.c ft_itoa_base.c ft_itoa_rec.c ft_itoa.c ft_itoh.c ft_itoo.c \
-				ft_ldtoa.c ft_ldtoa__2.c ft_strconvchar.c ft_tolower.c ft_toupper.c ft_uitoa_base.c ft_uitoa.c ft_wctostr.c
+CHAR_FILES	:= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_isdigit.c \
+				ft_isinvisible.c ft_islower.c ft_isprint.c ft_issignal.c \
+				ft_isspace.c ft_isupper.c
+CONV_FILES	:= ft_atoi.c ft_etoa__2.c ft_etoa.c ft_ftoa.c ft_itoa_base.c \
+				ft_itoa_rec.c ft_itoa.c ft_itoh.c ft_itoo.c \
+				ft_ldtoa.c ft_ldtoa__2.c ft_strconvchar.c ft_tolower.c \
+				ft_toupper.c ft_uitoa_base.c ft_uitoa.c ft_wctostr.c
 FILES_FILES	:= get_next_line.c
-LST_FILES	:= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-				ft_lstmap.c ft_lstnew.c ft_lstsize.c
+LST_FILES	:= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
+				ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 MATH_FILES	:= ft_pow.c ft_powf.c
-MEM_FILES	:= ft_bzero.c ft_calloc.c ft_free.c ft_malloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
-				ft_memmove.c ft_memrchr.c ft_memset.c ft_mtzcalloc.c ft_swap.c
+MEM_FILES	:= ft_bzero.c ft_calloc.c ft_free.c ft_malloc.c ft_memccpy.c \
+				ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memrchr.c \
+				ft_memset.c ft_mtzcalloc.c ft_swap.c
 NBR_FILES	:= ft_floatspecial.c ft_isnegative.c ft_nbdigits.c
 NORM_FILES	:= ft_ternaries.c
 PUT_FILES	:= ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
@@ -111,21 +99,62 @@ SRCS	+= $(CHAR_SRC) $(CONV_SRC) $(FILES_SRC) $(LST_SRC) $(MATH_SRC) $(MEM_SRC) $
 OBJS	:= ${subst $(SRC_ROOT), $(OBJ_ROOT), $(SRCS:.c=.o)}
 DEPS	:= ${subst $(SRC_ROOT), $(DEP_ROOT), $(SRCS:.c=.d)}
 
-###########################################
-## User input
-###########################################
+########################################
+## Colors							  ##
+########################################
+
+# Reset
+COLOR_RESET		=0# 0m equals to m
+
+# Start && End
+COLOR_START		=[
+COLOR_END		=[$(COLOR_RESET)m
+
+COLORF_RED		=31
+COLORF_GREEN	=32
+COLORF_YELLOW	=33
+
+CL_NORM_OK		:=$(COLOR_START)$(COLORF_GREEN)m
+CL_NORM_WARN	:=$(COLOR_START)$(COLORF_YELLOW)m
+CL_NORM_ERROR	:=$(COLOR_START)$(COLORF_RED)m
+CL_NORM_NUM		:=$(COLOR_START)$(COLORF_YELLOW)m
+
+########################################
+## Commands & Flags					  ##
+########################################
+
+CC			= gcc
+CFLAGS		= -Wall -Werror -Wextra
+DEBFLAGS	= -g -fsanitize=address
+
+AR		= ar rcs
+
+NORM		= norminette
+NORM_COLORS	:= sed "s/OK!/$(CL_NORM_OK)OK!$/$(COLOR_END)/g"
+NORM_COLORS	+= | sed -E "s/Error(!|:)/$(CL_NORM_ERROR)Error\1$/$(COLOR_END)/g"
+NORM_COLORS	+= | sed -E "s/Warning(!|:)/$(CL_NORM_WARN)Warning\1$/$(COLOR_END)/g"
+NORM_COLORS	+= | sed -E "s/line:[[:blank:]]+([0-9]+)/$(CL_NORM_NUM)\1$/$(COLOR_END)/g"
+NORM_COLORS	+= | sed -E "s/col:[[:blank:]]+([0-9]+)/$(CL_NORM_NUM)\1$/$(COLOR_END)/g"
+
+MKDIR	= mkdir -p
+RM		= rm -fr
+
+#########################################
+## User input						   ##
+#########################################
 
 f	:=
 
-##########################################################################################################################################
+
+################################################################################
 ## Rules
-##########################################################################################################################################
+################################################################################
 
 .DELETE_ON_ERROR:
 
-###########################################
-## Compile
-###########################################
+#########################################
+## Compile							   ##
+#########################################
 
 all: $(NAME)
 
@@ -138,20 +167,22 @@ $(OBJS): $(OBJ_ROOT)%.o : $(SRC_ROOT)%.c $(DEP_ROOT)%.d | ${foreach dir, $(OBJ_R
 	$(CC) $(CFLAGS) -I $(INC_ROOT) -c $< -o $@
 
 $(DEPS): $(DEP_ROOT)%.d: $(SRC_ROOT)%.c | ${foreach dir, $(DEP_ROOT), ${addprefix $(DEP_ROOT), $(ALL_DIRS)}}
-	@$(CC) $(CFLAGS) -I $(INC_ROOT) -M -MT '${patsubst $(SRC_ROOT)%.c,$(OBJ_ROOT)%.o,$<} ${patsubst $(SRC_ROOT)%.c,$(DEP_ROOT)%.d,$<}' $< -MF ${patsubst $(SRC_ROOT)%.c,$(DEP_ROOT)%.d,$<}
+	@$(CC) $(CFLAGS) -I $(INC_ROOT) \
+		-M -MT '${patsubst $(SRC_ROOT)%.c,$(OBJ_ROOT)%.o,$<} ${patsubst $(SRC_ROOT)%.c,$(DEP_ROOT)%.d,$<}' $< \
+		-MF ${patsubst $(SRC_ROOT)%.c,$(DEP_ROOT)%.d,$<}
 
 bonus: all
 
-###########################################
-## Debug
-###########################################
+#########################################
+## Debug							   ##
+#########################################
 
 debug: CFLAGS += $(DEBFLAGS)
 debug: all
 
-###########################################
-## Make dirs
-###########################################
+#########################################
+## make dirs						   ##
+#########################################
 
 $(BIN_ROOT) $(OBJ_ROOT) $(DEP_ROOT):
 	@$(MKDIR) $@
@@ -162,9 +193,9 @@ ${foreach dir, $(OBJ_ROOT), ${addprefix $(OBJ_ROOT), $(ALL_DIRS)}}: | $(OBJ_ROOT
 ${foreach dir, $(DEP_ROOT), ${addprefix $(DEP_ROOT), $(ALL_DIRS)}}: | $(DEP_ROOT)
 	@$(MKDIR) $@
 
-###########################################
-## Norm
-###########################################
+#########################################
+## Norm								   ##
+#########################################
 
 norm:
 ifeq ($(strip $(f)),$(filter $(strip $(f)), header))
@@ -223,9 +254,9 @@ ifeq ($(strip $(f)),$(filter $(strip $(f)), str))
 	@$(NORM) $(STR_SRC) | $(NORM_COLORS)
 endif
 
-###########################################
-## Clear
-###########################################
+#########################################
+## Clear							   ##
+#########################################
 
 clean:
 	$(RM) $(OBJ_ROOT)
@@ -241,29 +272,34 @@ clean_debug:
 
 clean_all: fclean clean_dep clean_debug
 
-###########################################
-## Reload
-###########################################
+#########################################
+## Reload							   ##
+#########################################
 
 re_debug: fclean debug
 
 re: fclean all
 
-##########################################################################################################################################
+################################################################################
 ## PHONY
-##########################################################################################################################################
+################################################################################
 
-.PHONY: all bonus debug norm clean fclean clean_dep clean_debug clean_all re_debug re
+.PHONY: all bonus
+.PHONY: debug norm 
+.PHONY: clean fclean clean_dep clean_debug clean_all
+.PHONY: re_debug re
 
-##########################################################################################################################################
+
+################################################################################
 # Includes
-##########################################################################################################################################
+################################################################################
 
 -include ${shell find . -mindepth 2 -type f -name '*.d'}
 
-##########################################################################################################################################
+
+################################################################################
 ## Tutorial
-##########################################################################################################################################
+################################################################################
 
 # =		-> only looks for the variables when the command is used, not when it's defined
 # :=	-> like normal imperative programming -- only those defined so far get expanded.
