@@ -16,14 +16,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define FD_STDIN 1
-# define FD_STDOUT 2
-# define FD_STDERROR 3
+# define FD_STDIN       0
+# define FD_STDOUT      1
+# define FD_STDERROR    2
 
 # define FD_EOF 0
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE   42
 # endif
 
 typedef struct s_list
