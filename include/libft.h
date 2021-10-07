@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 01:48:25 by tosilva           #+#    #+#             */
-/*   Updated: 2021/09/30 13:45:24 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/07 11:59:13 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 # define FD_STDIN       0
 # define FD_STDOUT      1
