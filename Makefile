@@ -5,41 +5,42 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/03/20 13:00:09 by tosilva           #+#    #+#              #
-#    Updated: 2021/09/30 14:46:41 by tosilva          ###   ########.fr        #
+#    Created: 2021/09/28 18:49:28 by tosilva           #+#    #+#              #
+#    Updated: 2021/10/23 12:54:37 by tosilva          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ################################################################################
-## Variables
+### Variables																 ###
 ################################################################################
 
 ########################################
-## Target							  ##
+## Target Name						  ##
 ########################################
 
-TARGET	=	libft.a
+NAME	= libft.a
 
-#########################################
-## Folders & Files					   ##
-#########################################
 
-		# Current dir
-CURRENT := ${shell pwd}/
+########################################
+## Folders & Files					  ##
+########################################
 
-			# Or with $(addprefix ${CURRENT}, bin/)
-BIN_ROOT	= bin/
-INC_ROOT	= include/
-SRC_ROOT	= src/
-OBJ_ROOT	= obj/
-DEP_ROOT	= dep/
+DEBUG_FILES	= $(NAME).dSYM/
 
-		# Path + Target
-NAME	:= ${addprefix $(BIN_ROOT), $(TARGET)}
+# ASCII ART MESSAGES
+FONT_DIR	= font/
 
-DEBUG_FILES	= a.out a.out.dSYM/
 
-			# SRC_ROOT subfolders (*_DIR)
+# DEFAULT FOLDERS
+BIN_DIR		= bin/
+NAME		:= ${addprefix $(BIN_DIR), $(NAME)}
+
+INC_DIR		= inc/
+SRC_DIR		= src/
+OBJ_DIR		= obj/
+DEP_DIR		= dep/
+
+# SUBFOLDERS
 CHAR_DIR	= char/
 CONV_DIR	= conv/
 FILES_DIR	= files/
@@ -51,250 +52,343 @@ NORM_DIR	= norm/
 PUT_DIR		= put/
 STR_DIR		= str/
 
-ALL_DIRS	= $(CHAR_DIR) $(CONV_DIR) $(FILES_DIR) $(LST_DIR) $(MATH_DIR) $(MEM_DIR) $(NBR_DIR) $(NORM_DIR) $(PUT_DIR) $(STR_DIR)
+ALL_DIRS	= $(CHAR_DIR) $(CONV_DIR) $(FILES_DIR) $(LST_DIR) $(MATH_DIR) \
+				$(MEM_DIR) $(NBR_DIR) $(NORM_DIR) $(PUT_DIR) $(STR_DIR)
 
-			# Header files (INC_ROOT*.h), *.c files in SRC_ROOT and *.c files in each SRC_ROOT subfolders (*_DIR)
+
+# FILES
 HFILES		:= libft.h
 CFILES		:=
 
-CHAR_FILES	:= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_isdigit.c \
-				ft_isinvisible.c ft_islower.c ft_isprint.c ft_issignal.c \
-				ft_isspace.c ft_isupper.c
-CONV_FILES	:= ft_atoi.c ft_etoa__2.c ft_etoa.c ft_ftoa.c ft_itoa_base.c \
-				ft_itoa_rec.c ft_itoa.c ft_itoh.c ft_itoo.c \
-				ft_ldtoa.c ft_ldtoa__2.c ft_strconvchar.c ft_tolower.c \
-				ft_toupper.c ft_uitoa_base.c ft_uitoa.c ft_wctostr.c
+CHAR_FILES	:= ft_isalnum.c \
+				ft_isalpha.c \
+				ft_isascii.c \
+				ft_isblank.c \
+				ft_isdigit.c \
+				ft_isinvisible.c \
+				ft_islower.c \
+				ft_isprint.c \
+				ft_issignal.c \
+				ft_isspace.c \
+				ft_isupper.c
+CONV_FILES	:= ft_atoi.c ft_etoa__2.c \
+				ft_etoa.c \
+				ft_ftoa.c \
+				ft_itoa_base.c \
+				ft_itoa_rec.c \
+				ft_itoa.c \
+				ft_itoh.c \
+				ft_itoo.c \
+				ft_ldtoa.c ft_ldtoa__2.c \
+				ft_strconvchar.c \
+				ft_tolower.c \
+				ft_toupper.c \
+				ft_uitoa_base.c \
+				ft_uitoa.c \
+				ft_wctostr.c
 FILES_FILES	:= get_next_line.c
-LST_FILES	:= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
-				ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
-MATH_FILES	:= ft_pow.c ft_powf.c
-MEM_FILES	:= ft_bzero.c ft_calloc.c ft_free.c ft_malloc.c ft_memccpy.c \
-				ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memrchr.c \
-				ft_memset.c ft_mtzcalloc.c ft_swap.c
-NBR_FILES	:= ft_floatspecial.c ft_isnegative.c ft_nbdigits.c
+LST_FILES	:= ft_lstadd_back.c \
+				ft_lstadd_front.c \
+				ft_lstclear.c \
+				ft_lstdelone.c \
+				ft_lstiter.c \
+				ft_lstlast.c \
+				ft_lstmap.c \
+				ft_lstnew.c \
+				ft_lstsize.c
+MATH_FILES	:= ft_pow.c \
+				ft_powf.c
+MEM_FILES	:= ft_bzero.c \
+				ft_calloc.c \
+				ft_free.c \
+				ft_malloc.c \
+				ft_memccpy.c \
+				ft_memchr.c \
+				ft_memcmp.c \
+				ft_memcpy.c \
+				ft_memmove.c \
+				ft_memrchr.c \
+				ft_memset.c \
+				ft_mtzcalloc.c \
+				ft_swap.c
+NBR_FILES	:= ft_floatspecial.c \
+				ft_isnegative.c \
+				ft_nbdigits.c
 NORM_FILES	:= ft_ternaries.c
-PUT_FILES	:= ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
-STR_FILES	:= ft_split.c ft_strchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
-				ft_strncmp.c ft_strnlen.c ft_strnstr.c ft_strrchr.c ft_strreplace.c ft_strtrim.c ft_substr.c
+PUT_FILES	:= ft_putchar_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
+				ft_putstr_fd.c
+STR_FILES	:= ft_split.c \
+				ft_strchr.c \
+				ft_strdup.c \
+				ft_strjoin.c \
+				ft_strlcat.c \
+				ft_strlcpy.c \
+				ft_strlen.c \
+				ft_strmapi.c \
+				ft_strncmp.c \
+				ft_strnlen.c \
+				ft_strnstr.c \
+				ft_strrchr.c \
+				ft_strreplace.c \
+				ft_strtrim.c \
+				ft_substr.c
 
-			# Files with their path divided by their folders (INC_ROOT, SRC_ROOT and SRC_ROOT/*_DIR)
-HFILES_SRC	:= ${foreach file, $(INC_ROOT), ${addprefix $(INC_ROOT), $(HFILES)}}
-CFILES_SRC	:= ${foreach file, $(SRC_ROOT), ${addprefix $(SRC_ROOT), $(CFILES)}}
 
-CHAR_SRC	:= ${foreach file, $(CHAR_DIR), ${addprefix $(SRC_ROOT)$(CHAR_DIR), $(CHAR_FILES)}}
-CONV_SRC	:= ${foreach file, $(CONV_DIR), ${addprefix $(SRC_ROOT)$(CONV_DIR), $(CONV_FILES)}}
-FILES_SRC	:= ${foreach file, $(FILES_DIR), ${addprefix $(SRC_ROOT)$(FILES_DIR), $(FILES_FILES)}}
-LST_SRC		:= ${foreach file, $(LST_DIR), ${addprefix $(SRC_ROOT)$(LST_DIR), $(LST_FILES)}}
-MATH_SRC	:= ${foreach file, $(MATH_DIR), ${addprefix $(SRC_ROOT)$(MATH_DIR), $(MATH_FILES)}}
-MEM_SRC		:= ${foreach file, $(MEM_DIR), ${addprefix $(SRC_ROOT)$(MEM_DIR), $(MEM_FILES)}}
-NBR_SRC		:= ${foreach file, $(NBR_DIR), ${addprefix $(SRC_ROOT)$(NBR_DIR), $(NBR_FILES)}}
-NORM_SRC	:= ${foreach file, $(NORM_DIR), ${addprefix $(SRC_ROOT)$(NORM_DIR), $(NORM_FILES)}}
-PUT_SRC		:= ${foreach file, $(PUT_DIR), ${addprefix $(SRC_ROOT)$(PUT_DIR), $(PUT_FILES)}}
-STR_SRC		:= ${foreach file, $(STR_DIR), ${addprefix $(SRC_ROOT)$(STR_DIR), $(STR_FILES)}}
+# FILES AND THEIR FOLDERS
+HFILES_SRC	:= ${foreach file, $(INC_DIR), ${addprefix $(INC_DIR), $(HFILES)}}
+CFILES_SRC	:= ${foreach file, $(SRC_DIR), ${addprefix $(SRC_DIR), $(CFILES)}}
 
-		# All files and folders in *_ROOT's
+CHAR_SRC	:= ${foreach file, $(CHAR_DIR), ${addprefix $(SRC_DIR)$(CHAR_DIR), $(CHAR_FILES)}}
+CONV_SRC	:= ${foreach file, $(CONV_DIR), ${addprefix $(SRC_DIR)$(CONV_DIR), $(CONV_FILES)}}
+FILES_SRC	:= ${foreach file, $(FILES_DIR), ${addprefix $(SRC_DIR)$(FILES_DIR), $(FILES_FILES)}}
+LST_SRC		:= ${foreach file, $(LST_DIR), ${addprefix $(SRC_DIR)$(LST_DIR), $(LST_FILES)}}
+MATH_SRC	:= ${foreach file, $(MATH_DIR), ${addprefix $(SRC_DIR)$(MATH_DIR), $(MATH_FILES)}}
+MEM_SRC		:= ${foreach file, $(MEM_DIR), ${addprefix $(SRC_DIR)$(MEM_DIR), $(MEM_FILES)}}
+NBR_SRC		:= ${foreach file, $(NBR_DIR), ${addprefix $(SRC_DIR)$(NBR_DIR), $(NBR_FILES)}}
+NORM_SRC	:= ${foreach file, $(NORM_DIR), ${addprefix $(SRC_DIR)$(NORM_DIR), $(NORM_FILES)}}
+PUT_SRC		:= ${foreach file, $(PUT_DIR), ${addprefix $(SRC_DIR)$(PUT_DIR), $(PUT_FILES)}}
+STR_SRC		:= ${foreach file, $(STR_DIR), ${addprefix $(SRC_DIR)$(STR_DIR), $(STR_FILES)}}
+
+
 INCS	:= $(HFILES_SRC)
 SRCS	:= $(CFILES_SRC)
-SRCS	+= $(CHAR_SRC) $(CONV_SRC) $(FILES_SRC) $(LST_SRC) $(MATH_SRC) $(MEM_SRC) $(NBR_SRC) $(NORM_SRC) $(PUT_SRC) $(STR_SRC)
-OBJS	:= ${subst $(SRC_ROOT), $(OBJ_ROOT), $(SRCS:.c=.o)}
-DEPS	:= ${subst $(SRC_ROOT), $(DEP_ROOT), $(SRCS:.c=.d)}
+SRCS	+= $(CHAR_SRC) $(CONV_SRC) $(FILES_SRC) $(LST_SRC) $(MATH_SRC) \
+			$(MEM_SRC) $(NBR_SRC) $(NORM_SRC) $(PUT_SRC) $(STR_SRC)
+OBJS	:= ${subst $(SRC_DIR), $(OBJ_DIR), $(SRCS:.c=.o)}
+DEPS	:= ${subst $(SRC_DIR), $(DEP_DIR), $(SRCS:.c=.d)}
+
+
 
 ########################################
 ## Colors							  ##
 ########################################
 
-# Reset
-COLOR_RESET		=0# 0m equals to m
+# RESET
+COLOR_RESET		=[0m
 
-# Start && End
-COLOR_START		=[
-COLOR_END		=[$(COLOR_RESET)m
+COLORF_RED		=[31m
+COLORF_GREEN	=[32m
+COLORF_YELLOW	=[33m
+COLORF_CYAN		=[36m
 
-COLORF_RED		=31
-COLORF_GREEN	=32
-COLORF_YELLOW	=33
+CL_NORM_OK		:=$(COLORF_GREEN)
+CL_NORM_WARN	:=$(COLORF_YELLOW)
+CL_NORM_ERROR	:=$(COLORF_RED)
+CL_NORM_NUM		:=$(COLORF_CYAN)
 
-CL_NORM_OK		:=$(COLOR_START)$(COLORF_GREEN)m
-CL_NORM_WARN	:=$(COLOR_START)$(COLORF_YELLOW)m
-CL_NORM_ERROR	:=$(COLOR_START)$(COLORF_RED)m
-CL_NORM_NUM		:=$(COLOR_START)$(COLORF_YELLOW)m
 
 ########################################
 ## Commands & Flags					  ##
 ########################################
 
 CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		= -Wall -Werror -Wextra # -03
 DEBFLAGS	= -g -fsanitize=address
+INCFLAGS	:= -I./$(INC_DIR)
 
 AR		= ar rcs
 
-NORM		= norminette
-NORM_COLORS	:= sed "s/OK!/$(CL_NORM_OK)OK!$/$(COLOR_END)/g"
-NORM_COLORS	+= | sed -E "s/Error(!|:)/$(CL_NORM_ERROR)Error\1$/$(COLOR_END)/g"
-NORM_COLORS	+= | sed -E "s/Warning(!|:)/$(CL_NORM_WARN)Warning\1$/$(COLOR_END)/g"
-NORM_COLORS	+= | sed -E "s/line:[[:blank:]]+([0-9]+)/$(CL_NORM_NUM)\1$/$(COLOR_END)/g"
-NORM_COLORS	+= | sed -E "s/col:[[:blank:]]+([0-9]+)/$(CL_NORM_NUM)\1$/$(COLOR_END)/g"
-
 MKDIR	= mkdir -p
 RM		= rm -fr
+
+NORM		= norminette
+NORM_COLORS	:= sed "s/OK!/$(CL_NORM_OK)OK!$/$(COLOR_RESET)/g"
+NORM_COLORS	+= | sed -E "s/Error(!|:)/$(CL_NORM_ERROR)Error\1$/$(COLOR_RESET)/g"
+NORM_COLORS	+= | sed -E "s/Warning(!|:)/$(CL_NORM_WARN)Warning\1$/$(COLOR_RESET)/g"
+NORM_COLORS	+= | sed -E "s/line:[[:blank:]]+([0-9]+)/$(CL_NORM_NUM)\1$/$(COLOR_RESET)/g"
+NORM_COLORS	+= | sed -E "s/col:[[:blank:]]+([0-9]+)/$(CL_NORM_NUM)\1$/$(COLOR_RESET)/g"
+
 
 #########################################
 ## User input						   ##
 #########################################
 
-f	:=
+folder	:=
+
 
 
 ################################################################################
-## Rules
+### Rules																	 ###
 ################################################################################
 
 .DELETE_ON_ERROR:
 
-#########################################
-## Compile							   ##
-#########################################
+########################################
+## Compile							  ##
+########################################
 
-all: $(NAME)
+all: target
 
-$(NAME): $(OBJS) | $(BIN_ROOT)
-	$(AR) $@ $^
-# @find $(INC_ROOT) -type f -name '*.h' -exec cp {} . \;
-# @cp $@ .
+target: msg_compiling $(NAME) msg_created
 
-$(OBJS): $(OBJ_ROOT)%.o : $(SRC_ROOT)%.c $(DEP_ROOT)%.d | ${foreach dir, $(OBJ_ROOT), ${addprefix $(OBJ_ROOT), $(ALL_DIRS)}}
-	$(CC) $(CFLAGS) -I $(INC_ROOT) -c $< -o $@
+$(NAME): $(OBJS) | $(BIN_DIR)
+	@$(AR) $@ $^
 
-$(DEPS): $(DEP_ROOT)%.d: $(SRC_ROOT)%.c | ${foreach dir, $(DEP_ROOT), ${addprefix $(DEP_ROOT), $(ALL_DIRS)}}
-	@$(CC) $(CFLAGS) -I $(INC_ROOT) \
-		-M -MT '${patsubst $(SRC_ROOT)%.c,$(OBJ_ROOT)%.o,$<} ${patsubst $(SRC_ROOT)%.c,$(DEP_ROOT)%.d,$<}' $< \
-		-MF ${patsubst $(SRC_ROOT)%.c,$(DEP_ROOT)%.d,$<}
+$(OBJS): $(OBJ_DIR)%.o : $(SRC_DIR)%.c $(DEP_DIR)%.d | ${foreach dir, $(OBJ_DIR), ${addprefix $(OBJ_DIR), $(ALL_DIRS)}}
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	@echo "⬜\c"
 
-bonus: all
+$(DEPS): $(DEP_DIR)%.d: $(SRC_DIR)%.c | ${foreach dir, $(DEP_DIR), ${addprefix $(DEP_DIR), $(ALL_DIRS)}}
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -M \
+		-MT '${patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$<} \
+				${patsubst $(SRC_DIR)%.c,$(DEP_DIR)%.d,$<}' $< \
+		-MF ${patsubst $(SRC_DIR)%.c,$(DEP_DIR)%.d,$<}
 
-#########################################
-## Debug							   ##
-#########################################
+
+
+########################################
+## Debug							  ##
+########################################
 
 debug: CFLAGS += $(DEBFLAGS)
 debug: all
 
-#########################################
-## make dirs						   ##
-#########################################
 
-$(BIN_ROOT) $(OBJ_ROOT) $(DEP_ROOT):
+########################################
+## Make dirs						  ##
+########################################
+
+$(BIN_DIR) $(OBJ_DIR) $(DEP_DIR):
 	@$(MKDIR) $@
 
-${foreach dir, $(OBJ_ROOT), ${addprefix $(OBJ_ROOT), $(ALL_DIRS)}}: | $(OBJ_ROOT)
+${foreach dir, $(OBJ_DIR), ${addprefix $(OBJ_DIR), $(ALL_DIRS)}}: | $(OBJ_DIR)
 	@$(MKDIR) $@
 
-${foreach dir, $(DEP_ROOT), ${addprefix $(DEP_ROOT), $(ALL_DIRS)}}: | $(DEP_ROOT)
+${foreach dir, $(DEP_DIR), ${addprefix $(DEP_DIR), $(ALL_DIRS)}}: | $(DEP_DIR)
 	@$(MKDIR) $@
 
-#########################################
-## Norm								   ##
-#########################################
+
+########################################
+## Norm								  ##
+########################################
 
 norm:
-ifeq ($(strip $(f)),$(filter $(strip $(f)), header))
+ifeq ($(strip $(folder)),$(filter $(strip $(folder)), inc))
 	@echo
-	@echo "»»»»» HEADERS «««««"
+	@echo "▱▱▱▱▱ HEADERS ▱▱▱▱▱"
 	@$(NORM) $(INCS) | $(NORM_COLORS)
 endif
-ifeq ($(strip $(f)),$(filter $(strip $(f)), char))
+ifeq ($(strip $(folder)),$(filter $(strip $(folder)), char))
 	@echo 
-	@echo "»»»»» CHAR FILES «««««"
+	@echo "▱▱▱▱▱ CHAR FILES ▱▱▱▱▱"
 	@$(NORM) $(CHAR_SRC) | $(NORM_COLORS)
 endif
-ifeq ($(strip $(f)),$(filter $(strip $(f)), conv))
+ifeq ($(strip $(folder)),$(filter $(strip $(folder)), conv))
 	@echo 
-	@echo "»»»»» CONV FILES «««««"
+	@echo "▱▱▱▱▱ CONV FILES ▱▱▱▱▱"
 	@$(NORM) $(CONV_SRC) | $(NORM_COLORS)
 endif
-ifeq ($(strip $(f)),$(filter $(strip $(f)), files))
+ifeq ($(strip $(folder)),$(filter $(strip $(folder)), files))
 	@echo 
-	@echo "»»»»» FILES FILES «««««"
+	@echo "▱▱▱▱▱ FILES FILES ▱▱▱▱▱"
 	@$(NORM) $(FILES_SRC) | $(NORM_COLORS)
 endif
-ifeq ($(strip $(f)),$(filter $(strip $(f)), lst))
+ifeq ($(strip $(folder)),$(filter $(strip $(folder)), lst))
 	@echo 
-	@echo "»»»»» LST FILES «««««"
+	@echo "▱▱▱▱▱ LST FILES ▱▱▱▱▱"
 	@$(NORM) $(LST_SRC) | $(NORM_COLORS)
 endif
-ifeq ($(strip $(f)),$(filter $(strip $(f)), math))
+ifeq ($(strip $(folder)),$(filter $(strip $(folder)), math))
 	@echo 
-	@echo "»»»»» MATH FILES «««««"
+	@echo "▱▱▱▱▱ MATH FILES ▱▱▱▱▱"
 	@$(NORM) $(MATH_SRC) | $(NORM_COLORS)
 endif
-ifeq ($(strip $(f)),$(filter $(strip $(f)), mem))
+ifeq ($(strip $(folder)),$(filter $(strip $(folder)), mem))
 	@echo 
-	@echo "»»»»» MEM FILES «««««"
+	@echo "▱▱▱▱▱ MEM FILES ▱▱▱▱▱"
 	@$(NORM) $(MEM_SRC) | $(NORM_COLORS)
 endif
-ifeq ($(strip $(f)),$(filter $(strip $(f)), nbr))
+ifeq ($(strip $(folder)),$(filter $(strip $(folder)), nbr))
 	@echo 
-	@echo "»»»»» NBR FILES «««««"
+	@echo "▱▱▱▱▱ NBR FILES ▱▱▱▱▱"
 	@$(NORM) $(NBR_SRC) | $(NORM_COLORS)
 endif
-ifeq ($(strip $(f)),$(filter $(strip $(f)), norm))
+ifeq ($(strip $(folder)),$(filter $(strip $(folder)), norm))
 	@echo 
-	@echo "»»»»» NORM FILES «««««"
+	@echo "▱▱▱▱▱ NORM FILES ▱▱▱▱▱"
 	@$(NORM) $(NORM_SRC) | $(NORM_COLORS)
 endif
-ifeq ($(strip $(f)),$(filter $(strip $(f)), put))
+ifeq ($(strip $(folder)),$(filter $(strip $(folder)), put))
 	@echo 
-	@echo "»»»»» PUT FILES «««««"
+	@echo "▱▱▱▱▱ PUT FILES ▱▱▱▱▱"
 	@$(NORM) $(PUT_SRC) | $(NORM_COLORS)
 endif
-ifeq ($(strip $(f)),$(filter $(strip $(f)), str))
+ifeq ($(strip $(folder)),$(filter $(strip $(folder)), str))
 	@echo 
-	@echo "»»»»» STR FILES «««««"
+	@echo "▱▱▱▱▱ STR FILES ▱▱▱▱▱"
 	@$(NORM) $(STR_SRC) | $(NORM_COLORS)
 endif
+	@echo
 
-#########################################
-## Clear							   ##
-#########################################
+
+########################################
+## Clear							  ##
+########################################
 
 clean:
-	$(RM) $(OBJ_ROOT)
+	@$(RM) $(OBJ_DIR)
 
-fclean: clean
-	$(RM) $(BIN_ROOT)
+fclean: clean msg_deleted
+	@$(RM) $(NAME) $(BIN_DIR)
 
 clean_dep:
-	$(RM) $(DEP_ROOT)
+	@$(RM) $(DEP_DIR)
 
 clean_debug:
-	$(RM) $(DEBUG_FILES)
+	@$(RM) $(DEBUG_FILES)
 
 clean_all: fclean clean_dep clean_debug
 
-#########################################
-## Reload							   ##
-#########################################
+
+########################################
+## Reload							  ##
+########################################
 
 re_debug: fclean debug
 
 re: fclean all
 
+
+########################################
+## Messages							  ##
+########################################
+
+msg_compiling:
+	@echo 
+	@echo "[ ... ] Creating ./$(NAME) [ ... ]"
+
+msg_created:
+	@echo "$(COLORF_GREEN)"
+	@cat ./font/created.txt
+	@echo "$(COLOR_RESET)"
+
+msg_deleted:
+	@echo "$(COLORF_RED)"
+	@cat ./font/deleted.txt
+	@echo "$(COLOR_RESET)"
+
+
+
 ################################################################################
-## PHONY
+### Phony																	 ###
 ################################################################################
 
-.PHONY: all bonus
-.PHONY: debug norm 
+.PHONY: all libft bonus target print_create print_created debug
+.PHONY: norm norm_libft
 .PHONY: clean fclean clean_dep clean_debug clean_all
 .PHONY: re_debug re
+.PHONY: msg_compiling msg_created msg_deleted
+
 
 
 ################################################################################
-# Includes
+### Includes																 ###
 ################################################################################
 
--include ${shell find . -mindepth 2 -type f -name '*.d'}
+-include ${shell find . -maxdepth 3 -type f -name '*.d'}
+
 
 
 ################################################################################
