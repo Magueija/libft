@@ -6,20 +6,20 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 16:05:04 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 15:17:19 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/23 13:49:11 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Replaces spaces with 0 (after dot right zeros) and 
-**	adds the minus signal in special cases. 
-** @param:	- [char *] long double number converted without after dot right zeros
-**			- [long double] original number
-** @return:	[char *] number converted with after dot right zeros 
-				and minus signal if needed
-*/
+/**
+ * Replaces spaces with 0 (after dot right zeros) and 
+ *	adds the minus signal in special cases. 
+ * @param	str [char *] long double number converted without after dot right zeros
+ * @param	n [long double] original number
+ * @returns	[char *] number converted with after dot right zeros 
+ * 				and minus signal if needed
+**/
 static char	*ft_zerosandneg(char *str, long double n)
 {
 	char	*temp;
@@ -34,12 +34,12 @@ static char	*ft_zerosandneg(char *str, long double n)
 	return (str);
 }
 
-/*
-** Converts a long double number to string.
-** @param:	- [long double] number to be converted
-**			- [unsigned short] number precision (to round the number)
-** @return:	[char *] long double number converted
-*/
+/**
+ * Converts a long double number to string.
+ * @param	n [long double] number to be converted
+ * @param	prec [unsigned short] number precision (to round the number)
+ * @returns	[char *] long double number converted
+**/
 char	*ft_ldtoa(long double n, unsigned short prec)
 {
 	char	*str;

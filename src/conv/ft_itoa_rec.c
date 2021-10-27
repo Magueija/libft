@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 02:12:42 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 14:54:28 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/23 13:49:18 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ static char	*ft_recitoa(int n, char *str)
 	return (str);
 }
 
-/*
-** Converts an integer to string recursively.
-** @param:	- [int] number to be converted
-** @return:	[char *] number converted
-*/
+/**
+ * Converts an integer to string recursively.
+ * @param	n [int] number to be converted
+ * @returns	[char *] number converted
+**/
 char	*ft_itoa_rec(int n)
 {
 	char	*strnum;

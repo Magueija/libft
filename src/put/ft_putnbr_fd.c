@@ -6,17 +6,17 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 02:32:23 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/14 17:26:06 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 12:39:46 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Outputs the long long number n to the given file descriptor.
-** @param:	- [int] the long long number to output
-**			- [int] the file descriptor on which to write
-*/
+/**
+ * Outputs the long long number 'n' to the given file descriptor.
+ * @param	n [int] the long long number to output
+ * @param	fd [int] the file descriptor on which to write
+**/
 void	ft_putllnbr_fd(long long n, int fd)
 {
 	if (n < 0)
@@ -29,11 +29,11 @@ void	ft_putllnbr_fd(long long n, int fd)
 	ft_putchar_fd((n % 10) + '0', fd);
 }
 
-/*
-** Outputs the integer n to the given file descriptor.
-** @param:	- [int] the  integer to output
-**			- [int] the file descriptor on which to write
-*/
+/**
+ * Outputs the integer 'n' to the given file descriptor.
+ * @param	n [int] the  integer to output
+ * @param	fd [int] the file descriptor on which to write
+**/
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)

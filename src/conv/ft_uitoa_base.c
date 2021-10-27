@@ -6,19 +6,19 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 09:34:34 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 15:14:24 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 11:46:46 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Converts an unsigned number to a given base.
-** @param:	- [unsigned long long] unsigned number to be converted
-**			- [char *] conversion base
-**			- [size_t *] base lenght
-** @return:	[char *] unsigned number converted
-*/
+/**
+ * Converts an unsigned number to a given base.
+ * @param	n [unsigned long long] unsigned number to be converted
+ * @param	base [char *] conversion base
+ * @param	base_len [size_t *] base length
+ * @returns	[char *] unsigned number converted
+**/
 static char	*ft_convnum(unsigned long long n, char *base, size_t *base_len)
 {
 	char	*strnum;
@@ -38,14 +38,14 @@ static char	*ft_convnum(unsigned long long n, char *base, size_t *base_len)
 	return (strnum);
 }
 
-/*
-** Converts an unsigned number to a given base with base prefix 
-** @param:	- [unsigned long long] unsigned number to be converted
-**			- [char *] conversion base
-**			- [size_t *] base lenght
-**			- [char *] base prefix
-** @return:	[char *] unsigned number converted with prefix
-*/
+/**
+ * Converts an unsigned number to a given base with base prefix 
+ * @param	n [unsigned long long] unsigned number to be converted
+ * @param	base [char *] conversion base
+ * @param	base_len [size_t *] base length
+ * @param	pfx [char *] base prefix
+ * @returns	[char *] unsigned number converted with prefix
+**/
 static char	*ft_convnum_prefix(unsigned long long n,
 				char *base, size_t *base_len, char *pfx)
 {
@@ -70,13 +70,13 @@ static char	*ft_convnum_prefix(unsigned long long n,
 	return (strnum);
 }
 
-/*
-** Converts an unsigned number to a given base
-**	but first check if it is a valid base.
-** @param:	- [unsigned long long] unsigned number to be converted
-**			- [char *] conversion base
-** @return:	[char *] number converted
-*/
+/**
+ * Converts an unsigned number to a given base
+ *	but first check if the base is valid.
+ * @param	n [unsigned long long] unsigned number to be converted
+ * @param	base [char *] conversion base
+ * @returns	[char *] number converted
+**/
 char	*ft_uitoa_base(unsigned long long n, char *base)
 {
 	char	*str;
@@ -89,14 +89,14 @@ char	*ft_uitoa_base(unsigned long long n, char *base)
 	return (str);
 }
 
-/*
-** Converts an unsigned number to a given base with base prefix 
-**	but first check if it is a valid base.
-** @param:	- [unsigned long long] unsigned number to be converted
-**			- [char *] conversion base
-**			- [char *] base prefix
-** @return:	[char *] number converted with prefix
-*/
+/**
+ * Converts an unsigned number to a given base with base prefix 
+ *	but first check if the base is valid.
+ * @param	n [unsigned long long] unsigned number to be converted
+ * @param	base [char *] conversion base
+ * @param	pfx [char *] base prefix
+ * @returns	[char *] number converted with prefix
+**/
 char	*ft_uitoa_base_prefix(unsigned long long n, char *base, char *pfx)
 {
 	char	*str;

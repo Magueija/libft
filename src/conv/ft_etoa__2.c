@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 18:08:26 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 18:04:13 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 11:34:35 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ static void	ft_checkneg2(long double *n, int *exp, int neg)
 		*exp += 1;
 }
 
-/*
-** Check for specific precisions and round number *n one more time.
-** @param:	- [long double] original number
-**			- [long double *] number ready for cientific notation and to round
-**			- [unsigned short] precision
-**			- [int *] exponent
-*/
+/**
+ * Check for specific precisions and round number '*n' one more time.
+ * @param	n_original [long double] original number
+ * @param	n [long double *] number ready for scientific notation and to round
+ * @param	prec [unsigned short] precision
+ * @param	exp [int *] exponent
+**/
 static void	ft_roundprec(long double n_original,
 	long double *n, unsigned short prec, int *exp)
 {
@@ -51,16 +51,16 @@ static void	ft_roundprec(long double n_original,
 	}
 }
 
-/*
-** Converts a long double number to a cientific notation number without exponent
-**	and counts the exponent needed for ft_addnotation().
-** @param:	- [long double *] number to convert to cientific notation
-**			- [short] if n was negative
-**			- [unsigned short] precision
-**			- [int *] exponent
-** @return:	[char *] cientific notation number without exponent
-*/
-char	*ft_ftocientific(long double n, short neg,
+/**
+ * Converts a long double number to a scientific notation number without exponent
+ *	and counts the exponent needed for ft_addnotation().
+ * @param	n [long double *] number to convert to scientific notation
+ * @param	neg [short] if 'n' was negative
+ * @param	prec [unsigned short] precision
+ * @param	exp [int *] exponent
+ * @returns	[char *] scientific notation number without exponent
+**/
+char	*ft_ftoscientific(long double n, short neg,
 			unsigned short prec, int *exp)
 {
 	long double	n_original;

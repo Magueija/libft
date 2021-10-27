@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 17:30:06 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/17 16:04:06 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/23 13:48:23 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ static int	ft_retval(ssize_t rd, char **line, char **str, char **temp)
 	return (1);
 }
 
-/*
-** With a static variable, reads each line of a file until EOF (FD_EOF). 
-**	Every time this function is called it returns the next 
-**	line of the file. It can be used on multiple file 
-**	descriptors at the same time. The BUFFER_SIZE can be changed 
-**	during the compilation using the flag -D (gcc -D BUFFER_SIZE=42).
-** @param:	- [int] file descriptor
-**			- [char **] dest: pointer to a string (char *)
-** @return:	[int] 1 if readed, 0 if the end of 
-**	the file is reached, -1 if an error occurs
-*/
+/**
+ * With a static variable, reads each line of a file until EOF (FD_EOF). 
+ *	Every time this function is called it returns the next 
+ *	line of the file. It can be used on multiple file 
+ *	descriptors at the same time. The BUFFER_SIZE can be changed 
+ *	during the compilation using the flag -D (gcc -D BUFFER_SIZE=42).
+ * @param	fd [int] file descriptor
+ * @param	line [char **] dest: pointer to a string (char *)
+ * @returns	[int] 1 if read, 0 if the end of 
+ *	the file is reached, -1 if an error occurs
+**/
 int	get_next_line(int fd, char **line)
 {
 	char		buf[BUFFER_SIZE + 1];

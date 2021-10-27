@@ -6,22 +6,22 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 03:02:09 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 17:38:04 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 13:02:46 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Applies the function f to each character of the 
-**	string s to create a new string (with malloc(3)) 
-**	resulting from successive applications of f.
-** @param:	- [char const *] the string on which to iterate
-**			- [char (*)(unsigned int, char)] the function to apply 
-**				to each character
-** @return:	[char *] the string created from the successive applications 
-**	of f. Returns NULL if the allocation fails.
-*/
+/**
+ * Applies the function 'f' to each character of the 
+ *	string 's' to create a new string (with malloc(3)) 
+ *	resulting from successive applications of 'f'.
+ * @param	s [char const *] the string on which to iterate
+ * @param	f [char (*)(unsigned int, char)] the function to apply 
+ *				to each character
+ * @returns	[char *] the string created from the successive applications 
+ *				of 'f'. Returns NULL if the allocation fails
+**/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;

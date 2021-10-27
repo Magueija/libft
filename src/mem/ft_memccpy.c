@@ -6,22 +6,22 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 02:20:26 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 20:01:07 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 11:56:06 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Copies no more than n bytes from memory area src 
-**	to memory area dest, stopping when the character c is found.
-** @param:	- [void *] destination memory to be pasted
-**			- [const void *] source memory to be copied
-**			- [int] char to be found
-**			- [size_t] number of bytes to copy
-** @return: [void *] pointer to the next character in dest after c, 
-**				or NULL if c was not found in the first n characters of src
-*/
+/**
+ * Copies no more than 'n' bytes from memory area 'src' 
+ *	to memory area 'dest', stopping when the character 'c' is found.
+ * @param	dest [void *] destination memory to be pasted
+ * @param	src [const void *] source memory to be copied
+ * @param	c [int] char to be found
+ * @param	n [size_t] number of bytes to copy
+ * @returns	[void *] pointer to the next character in dest after c, 
+ *				or NULL if c was not found in the first n characters of src
+**/
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	unsigned char	*d;

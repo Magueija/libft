@@ -6,16 +6,16 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 08:45:01 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 18:57:03 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/23 14:24:48 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Returns the value of n raised to the power of expn.
-** @param:	- [float] base number
-**			- [unsigned long] exponent
-** @return:	[double] n raised to the power of expn
-*/
+/**
+ * Returns the value of 'n' raised to the power of 'expn'.
+ * @param	n [float] base number
+ * @param	expn [unsigned long] exponent
+ * @returns	[double] 'n' raised to the power of 'expn'
+**/
 double	ft_powf(float n, unsigned long expn)
 {
 	double	nbr;
@@ -28,12 +28,12 @@ double	ft_powf(float n, unsigned long expn)
 	return (nbr);
 }
 
-/*
-** Returns the value of n raised to the power of expn.
-** @param:	- [double] base number
-**			- [unsigned long] exponent
-** @return:	[long double] n raised to the power of expn
-*/
+/**
+ * Returns the value of 'n' raised to the power of 'expn'.
+ * @param	n [double] base number
+ * @param	expn [unsigned long] exponent
+ * @returns	[long double] 'n' raised to the power of 'expn'
+**/
 long double	ft_powd(double n, unsigned long expn)
 {
 	long double	nbr;
@@ -46,12 +46,12 @@ long double	ft_powd(double n, unsigned long expn)
 	return (nbr);
 }
 
-/*
-** Returns the value of n raised to the power of expn.
-** @param:	- [long double] base number
-**			- [unsigned long] exponent
-** @return:	[long double] n raised to the power of expn
-*/
+/**
+ * Returns the value of 'n' raised to the power of 'expn'.
+ * @param	n [long double] base number
+ * @param	expn [unsigned long] exponent
+ * @returns	[long double] 'n' raised to the power of 'expn'
+**/
 long double	ft_powld(long double n, unsigned long expn)
 {
 	long double	nbr;

@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 17:50:19 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 15:31:00 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/23 13:49:06 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,23 +35,23 @@ static short	ft_wctostr__2(wchar_t c, unsigned char *str)
 		return (0);
 }
 
-/*
-** Converts a wide character to a string composed of single-byte characters.
-** \'
-** The UTF format can be composed of 1 to 4 bytes, depending where the binary
-**	lands in the hex ranges:
-**	- 1-byte UTF range: 0 to 7F
-**	- 2-byte UTF range: 80 to 7FF
-**	- 3-byte UTF range: 800 to FFFF
-**	- 4-byte UTF range: 10000 to 10FFFF
-** Masks per types of UTF:
-**	- 1-byte UTF: 0xxx xxxx
-**	- 2-byte UTF: 110x xxxx | 10xx xxxx
-**	- 3-byte UTF: 1110 xxxx | 10xx xxxx | 10xx xxxx
-**	- 4-byte UTF: 1111 0xxx | 10xx xxxx | 10xx xxxx | 10xx xxxx
-** @param:	- [wchar_t] wide char to converted
-** @return:	- [char *] wide char converted into single char string
-*/
+/**
+ * Converts a wide character to a string composed of single-byte characters.
+ * \0
+ * The UTF format can be composed of 1 to 4 bytes, depending where the binary
+ *	lands in the hex ranges:
+ *	- 1-byte UTF range: 0 to 7F
+ *	- 2-byte UTF range: 80 to 7FF
+ *	- 3-byte UTF range: 800 to FFFF
+ *	- 4-byte UTF range: 10000 to 10FFFF
+ * Masks per types of UTF:
+ *	- 1-byte UTF: 0xxx xxxx
+ *	- 2-byte UTF: 110x xxxx | 10xx xxxx
+ *	- 3-byte UTF: 1110 xxxx | 10xx xxxx | 10xx xxxx
+ *	- 4-byte UTF: 1111 0xxx | 10xx xxxx | 10xx xxxx | 10xx xxxx
+ * @param	c [wchar_t] wide char to converted
+ * @returns	[char *] wide char converted into single char string
+**/
 char	*ft_wctostr(wchar_t c)
 {
 	unsigned char	str[5];
@@ -77,11 +77,11 @@ char	*ft_wctostr(wchar_t c)
 	return (ft_strdup((char *)str));
 }
 
-/*
-** Converts wide char string to single char string.
-** @param:	- [wchar_t *] wide char string to be converted
-** @return:	- [char *] wide char string converted into single char string
-*/
+/**
+ * Converts wide char string to single char string.
+ * @param	wstr [wchar_t *] wide char string to be converted
+ * @returns	[char *] wide char string converted into single char string
+**/
 char	*ft_strwctostr(wchar_t *wstr)
 {
 	char	*str;

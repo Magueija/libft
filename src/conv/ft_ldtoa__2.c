@@ -6,17 +6,17 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 16:27:01 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 18:04:21 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 11:43:55 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Round before dot number.
-** @param:	- [char **] before dot number
-**			- [short] before dot number lenght
-*/
+/**
+ * Round before dot number.
+ * @param	str [char **] before dot number
+ * @param	nbefore [short] before dot number length
+**/
 static void	ft_roundbefore(char **str, short nbefore)
 {
 	char	*temp;
@@ -44,13 +44,13 @@ static void	ft_roundbefore(char **str, short nbefore)
 	}
 }
 
-/*
-** Round after dot number and, if needed, round 
-**	before dot number with ft_roundbefore().
-** @param:	- [char **] after dot number
-**			- [short] precision
-**			- [short] before dot number lenght
-*/
+/**
+ * Round after dot number and, if needed, round 
+ *	before dot number with ft_roundbefore().
+ * @param	str [char **] after dot number
+ * @param	prec [short] precision
+ * @param	nbefore [short] before dot number length
+**/
 static void	ft_roundafter(char **str, short prec, short nbefore)
 {
 	short	ct;
@@ -70,14 +70,14 @@ static void	ft_roundafter(char **str, short prec, short nbefore)
 	}
 }
 
-/*
-** If the number has 0s (zeros) then add them to *str. 
-**	Needed because 0s were skipped. 
-** @param:	- [char *] destination; before dot number converted
-**			- [size_t *] position to add the 0 (zero)
-**			- [short] before dot number lenght
-**			- [short] before dot number lenght without 0s (zeros)
-*/
+/**
+ * If the number has 0s (zeros) then add them to '*str'. 
+ *	Needed because 0s were skipped. 
+ * @param	str [char *] destination; before dot number converted
+ * @param	ct [size_t *] position to add the 0 (zero)
+ * @param	nbefore [short] before dot number length
+ * @param	newbefore_len [short] before dot number length without 0s (zeros)
+**/
 static void
 	ft_checkforzeros(char *str, size_t *ct, short *nbefore, short newbefore_len)
 {
@@ -89,13 +89,13 @@ static void
 	}
 }
 
-/*
-** Convert the before dot number to string.
-** @param:	- [char *] destination; before dot number converted
-**			- [long double] number to be converted
-**			- [short] before dot number lenght
-**			- [short] if *n was negative
-*/
+/**
+ * Convert the before dot number to string.
+ * @param	str [char *] destination; before dot number converted
+ * @param	n [long double] number to be converted
+ * @param	nbefore [short] before dot number length
+ * @param	neg [short] if *n was negative
+**/
 void	ft_fillbefore_str_ldtoa(char *str,
 			long double *n, short nbefore, short neg)
 {
@@ -125,14 +125,14 @@ void	ft_fillbefore_str_ldtoa(char *str,
 		str[ct - 1]++;
 }
 
-/*
-** Join before dot string and the converted after dot number.
-** @param:	- [char *] string with number before dot
-**			- [long double] number without before dot value
-**			- [short] number precision (to round the number)
-**			- [short] before dot number lenght
-** @return:	[char *] before dot and after dot numbers; n converted
-*/
+/**
+ * Join before dot string and the converted after dot number.
+ * @param	str [char *] string with number before dot
+ * @param	n [long double] number without before dot value
+ * @param	prec [short] number precision (to round the number)
+ * @param	nbefore [short] before dot number length
+ * @returns	[char *] before dot and after dot numbers; n converted
+**/
 char	*ft_fillafter_str_ldtoa(char *str,
 			long double n, short prec, short nbefore)
 {

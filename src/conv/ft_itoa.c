@@ -6,17 +6,17 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 02:12:42 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 14:56:36 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/23 13:49:17 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Converts a long long number to string.
-** @param:	- [long long] number to be converted
-** @return:	[char *] long long number converted
-*/
+/**
+ * Converts a long long number to string.
+ * @param	n [long long] number to be converted
+ * @returns	[char *] long long number converted
+**/
 char	*ft_llitoa(long long int n)
 {
 	char	*strnum;
@@ -42,31 +42,31 @@ char	*ft_llitoa(long long int n)
 	return (strnum);
 }
 
-/*
-** Converts a short number to string.
-** @param:	- [short] number to be converted
-** @return:	[char *] short number converted
-*/
+/**
+ * Converts a short number to string.
+ * @param	n [short] number to be converted
+ * @returns [char *] short number converted
+**/
 char	*ft_hitoa(short int n)
 {
 	return (ft_llitoa((long long int)n));
 }
 
-/*
-** Converts an integer to string.
-** @param:	- [int] number to be converted
-** @return:	[char *] integer converted
-*/
+/**
+ * Converts an integer to string.
+ * @param	n [int] number to be converted
+ * @returns	[char *] integer converted
+**/
 char	*ft_itoa(int n)
 {
 	return (ft_llitoa((long long int)n));
 }
 
-/*
-** Converts a long number to string.
-** @param:	- [long] number to be converted
-** @return:	[char *] long number converted
-*/
+/**
+ * Converts a long number to string.
+ * @param	n [long] number to be converted
+ * @returns	[char *] long number converted
+**/
 char	*ft_litoa(long int n)
 {
 	return (ft_llitoa((long long int)n));

@@ -6,19 +6,19 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:02:22 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 19:07:42 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 11:46:34 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Converts a number to a given base.
-** @param:	- [long long] number to be converted
-**			- [char *] conversion base
-**			- [size_t *] base lenght
-** @return:	[char *] number converted
-*/
+/**
+ * Converts a number to a given base.
+ * @param	n [long long] number to be converted
+ * @param	base [char *] conversion base
+ * @param	base_len [size_t *] base length
+ * @returns	[char *] number converted
+**/
 static char	*ft_convnum(long long n, char *base, size_t *base_len)
 {
 	char	*strnum;
@@ -42,14 +42,14 @@ static char	*ft_convnum(long long n, char *base, size_t *base_len)
 	return (strnum);
 }
 
-/*
-** Converts a number to a given base with base prefix 
-** @param:	- [long long] number to be converted
-**			- [char *] conversion base
-**			- [size_t *] base lenght
-**			- [char *] base prefix
-** @return:	[char *] number converted with prefix
-*/
+/**
+ * Converts a number to a given base with a base prefix 
+ * @param	n [long long] number to be converted
+ * @param	base [char *] conversion base
+ * @param	base_len [size_t *] base length
+ * @param	pfx [char *] base prefix
+ * @returns	[char *] number converted with prefix
+**/
 static char
 	*ft_convnum_prefix(long long n, char *base, size_t *base_len, char *pfx)
 {
@@ -78,13 +78,13 @@ static char
 	return (strnum);
 }
 
-/*
-** Check if the base is valid; that is, not empty, 
-**	and without signals and duplicate values.
-** @param:	- [char *] base to be checked
-**			- [size_t *] base lenght
-** @return:	[short] 1 if valid, 0 if not
-*/
+/**
+ * Check if the base is valid; that is, not empty, 
+ *	and without signals and duplicate values.
+ * @param	base [char *] base to be checked
+ * @param	base_len [size_t *] base length
+ * @returns	[short] 1 if valid, 0 if not
+**/
 short	ft_isvalidbase(char *base, size_t *base_len)
 {
 	char	*temp;
@@ -110,13 +110,13 @@ short	ft_isvalidbase(char *base, size_t *base_len)
 	return (0);
 }
 
-/*
-** Converts a number to a given base
-**	but first check if it is a valid base.
-** @param:	- [long long] number to be converted
-**			- [char *] conversion base
-** @return:	[char *] number converted
-*/
+/**
+ * Converts a number to a given base
+ *	but first check if the base is valid.
+ * @param	n [long long] number to be converted
+ * @param	base [char *] conversion base
+ * @returns	[char *] number converted
+**/
 char	*ft_itoa_base(long long n, char *base)
 {
 	char	*str;
@@ -129,14 +129,14 @@ char	*ft_itoa_base(long long n, char *base)
 	return (str);
 }
 
-/*
-** Converts a number to a given base with base prefix 
-**	but first check if it is a valid base.
-** @param:	- [long long] number to be converted
-**			- [char *] conversion base
-**			- [char *] base prefix
-** @return:	[char *] number converted with prefix
-*/
+/**
+ * Converts a number to a given base with a base prefix 
+ *	but first check if the base is valid.
+ * @param	n [long long] number to be converted
+ * @param	base [char *] conversion base
+ * @param	pfx [char *] base prefix
+ * @returns	[char *] number converted with prefix
+**/
 char	*ft_itoa_base_prefix(long long n, char *base, char *pfx)
 {
 	char	*str;

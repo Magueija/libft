@@ -6,16 +6,16 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 08:41:00 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 18:56:43 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/23 14:21:45 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Returns the value of n raised to the power of expn.
-** @param:	- [short] base number
-**			- [unsigned short] exponent
-** @return:	[int] n raised to the power of expn
-*/
+/**
+ * Returns the value of 'n' raised to the power of 'expn'.
+ * @param	n [short] base number
+ * @param	expn [unsigned short] exponent
+ * @returns	[int] 'n' raised to the power of 'expn'
+**/
 int	ft_powh(short n, unsigned short expn)
 {
 	int	nbr;
@@ -28,12 +28,12 @@ int	ft_powh(short n, unsigned short expn)
 	return (nbr);
 }
 
-/*
-** Returns the value of n raised to the power of expn.
-** @param:	- [int] base number
-**			- [unsigned int] exponent
-** @return:	[long] n raised to the power of expn
-*/
+/**
+ * Returns the value of 'n' raised to the power of 'expn'.
+ * @param	n [int] base number
+ * @param	expn [unsigned int] exponent
+ * @returns	[long] 'n' raised to the power of 'expn'
+**/
 long	ft_pow(int n, unsigned int expn)
 {
 	long	nbr;
@@ -46,12 +46,12 @@ long	ft_pow(int n, unsigned int expn)
 	return (nbr);
 }
 
-/*
-** Returns the value of n raised to the power of expn.
-** @param:	- [long] base number
-**			- [unsigned long] exponent
-** @return:	[long long] n raised to the power of expn
-*/
+/**
+ * Returns the value of 'n' raised to the power of 'expn'.
+ * @param	n [long] base number
+ * @param	expn [unsigned long] exponent
+ * @returns	[long long] 'n' raised to the power of 'expn'
+**/
 long long	ft_powl(long n, unsigned long expn)
 {
 	long long	nbr;
@@ -64,12 +64,12 @@ long long	ft_powl(long n, unsigned long expn)
 	return (nbr);
 }
 
-/*
-** Returns the value of n raised to the power of expn.
-** @param:	- [long long] base number
-**			- [unsigned long] exponent
-** @return:	[long long] n raised to the power of expn
-*/
+/**
+ * Returns the value of 'n' raised to the power of 'expn'.
+ * @param	n [long long] base number
+ * @param	expn [unsigned long] exponent
+ * @returns	[long long] 'n' raised to the power of 'expn'
+**/
 long long	ft_powll(long long n, unsigned long expn)
 {
 	long long	nbr;

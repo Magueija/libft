@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 03:04:05 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 17:59:52 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 13:09:28 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ static size_t	ft_allocsz(size_t *start, size_t *end)
 		return (*end - *start);
 }
 
-/*
-** Allocates (with malloc(3)) and returns a copy of 
-**	s1 with the characters specified in set removed 
-**	from the beginning and the end of the string.
-** @param:	- [char const *] the string to be trimmed
-**			- [char const *] the reference set of characters to trim
-** @return:	[char *] the trimmed string. NULL if the allocation fails.
-*/
+/**
+ * Allocates (with malloc(3)) and returns a copy of 
+ *	's1' with the characters specified in 'set' removed 
+ *	from the beginning and the end of the string.
+ * @param	s1 [char const *] the string to be trimmed
+ * @param	set [char const *] the reference set of characters to trim
+ * @returns	[char *] the trimmed string. NULL if the allocation fails.
+**/
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;

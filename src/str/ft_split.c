@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 02:58:42 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 17:38:25 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 12:43:06 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,16 @@ static char	**ft_splitwords(char const *s, char c, size_t *row, size_t *col)
 	return (strs);
 }
 
-/*
-** Allocates (with malloc(3)) and returns an array 
-**	of strings obtained by splitting s using the 
-**	character c as a delimiter. The array is  
-**	ended with a NULL pointer.
-** @param:	- [char const *] the string to be split
-**			- [char] the delimiter character
-** @return:	[char **] the array of new strings resulting from the split.
-**				NULL if the allocation fails
-*/
+/**
+ * Allocates (with malloc(3)) and returns an array 
+ *	of strings obtained by splitting 's' using the 
+ *	character 'c' as a delimiter. The array is  
+ *	ended with a NULL pointer.
+ * @param	s [char const *] the string to be split
+ * @param	c [char] the delimiter character
+ * @returns	[char **] the array of new strings resulting from the split.
+ *				NULL if the allocation fails
+**/
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;

@@ -6,17 +6,17 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 15:09:10 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 13:54:57 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 13:11:44 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Allocate memory for cientific notation exponent.
-** @param:	- [int] exponent
-** @return:	[char *] string with allocated memory 
-*/
+/**
+ * Allocate memory for scientific notation exponent.
+ * @param	exp [int] exponent
+ * @returns	[char *] string with allocated memory 
+**/
 static char	*ft_newstrnotation(int exp)
 {
 	char	*str_notation;
@@ -32,13 +32,14 @@ static char	*ft_newstrnotation(int exp)
 	return (str_notation);
 }
 
-/*
-** Joins the number from cientific notation with its exponent.
-** @param:	- [char *] number from cientific notation without exponent
-**			- [int] exponent
-** @return:	[char *] number in cientific notation
-*/
-static char	*ft_addnotation(char *str_cientific, int exp)
+/**
+ * Joins the number from scientific notation with its exponent.
+ * @param	str_scientific [char *] number from scientific 
+ * 							notation without exponent
+ * @param	exp [int] exponent
+ * @returns	[char *] number in scientific notation
+**/
+static char	*ft_addnotation(char *str_scientific, int exp)
 {
 	char	*str_notation;
 	char	*str_cn;
@@ -61,18 +62,18 @@ static char	*ft_addnotation(char *str_cientific, int exp)
 		str_notation[ct--] = (exp % 10) + '0';
 		exp /= 10;
 	}
-	str_cn = ft_strjoin(str_cientific, str_notation);
-	ft_free((void **)&str_cientific);
+	str_cn = ft_strjoin(str_scientific, str_notation);
+	ft_free((void **)&str_scientific);
 	ft_free((void **)&str_notation);
 	return (str_cn);
 }
 
-/*
-** Converts a long double number to cientific notation (string).
-** @param:	- [long double] number to be converted
-**			- [unsigned short] number precision (to round the number)
-** @return:	[char *] number in cientific notation
-*/
+/**
+ * Converts a long double number to scientific notation (string).
+ * @param	n [long double] number to be converted
+ * @param	prec [unsigned short] number precision (to round the number)
+ * @returns	[char *] number in scientific notation
+**/
 char	*ft_etoa(long double n, unsigned short prec)
 {
 	char				*str;
@@ -86,7 +87,7 @@ char	*ft_etoa(long double n, unsigned short prec)
 	else if (ft_isninf(n))
 		return (ft_strdup("-inf"));
 	neg = ft_isnegative_float((void *)&n);
-	str = ft_ftocientific(n, neg, prec, &exp);
+	str = ft_ftoscientific(n, neg, prec, &exp);
 	if (ft_strchr(str, 'n'))
 		return (str);
 	return (ft_addnotation(str, exp));

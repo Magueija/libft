@@ -6,20 +6,20 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 02:59:52 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/15 17:38:17 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 12:45:03 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Returns a pointer to a new string 
-**	which is a duplicate of the string s.
-** @param:	- [const char *] the string to 
-**				be copied
-** @return:	[char *] pointer to the duplicated string, 
-**				or NULL if insufficient memory was available.
-*/
+/**
+ * Returns a pointer to a new string 
+ *	which is a duplicate of the string 's'.
+ * @param	s [const char *] the string to 
+ *				be copied
+ * @returns	[char *] pointer to the duplicated string, 
+ *				or NULL if insufficient memory was available.
+**/
 char	*ft_strdup(const char *s)
 {
 	char	*str;

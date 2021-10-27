@@ -6,22 +6,22 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 09:04:15 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 19:57:42 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 11:55:19 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Allocates memory for an array of nelem elements of size 
-**	elsize each and returns a pointer to the allocated memory. 
-**	If (elsize == sizeof(char)) the memory is filled with spaces 
-**	and it is null ('\\0') terminated, else the memory is set to zero.
-** @param:	- [size_t] number of elements
-**			- [size_t] elements size
-** @return: [void *] pointer to memory allocated and filled 
-**				with spaces or set to zero
-*/
+/**
+ * Allocates memory for an array of 'nelem' elements of size 
+ *	'elsize' each and returns a pointer to the allocated memory. 
+ *	If (elsize == sizeof(char)) the memory is filled with spaces (' ') 
+ *	and it is null ('\\0') terminated, else the memory is set to zero.
+ * @param	nelem [size_t] number of elements
+ * @param	elsize [size_t] elements size
+ * @returns	[void *] pointer to memory allocated and filled 
+ *				with spaces or set to zero
+**/
 void	*ft_malloc(size_t nelem, size_t elsize)
 {
 	void			*pt;

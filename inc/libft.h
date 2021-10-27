@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 01:48:25 by tosilva           #+#    #+#             */
-/*   Updated: 2021/10/07 11:59:13 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/23 13:25:24 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void			ft_fillbefore_str_ldtoa(char *str,
 char			*ft_fillafter_str_ldtoa(char *str,
 					long double n, short prec, short nbefore);
 char			*ft_etoa(long double n, unsigned short prec);
-char			*ft_ftocientific(long double n, short neg,
+char			*ft_ftoscientific(long double n, short neg,
 					unsigned short prec, int *exp);
 char			*ft_wctostr(wchar_t c);
 char			*ft_strwctostr(wchar_t *wstr);

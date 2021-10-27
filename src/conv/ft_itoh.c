@@ -6,16 +6,16 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:48:36 by tosilva           #+#    #+#             */
-/*   Updated: 2021/05/13 15:00:27 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/10/27 11:43:06 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Fill the base with hexadecimal values.
-** @param:	- [char *] base to be filled
-*/
+/**
+ * Fill the 'base' with hexadecimal values.
+ * @param	base [char *] base to be filled
+**/
 static void	ft_fillbase(char *base)
 {
 	short	len_dig;
@@ -39,12 +39,12 @@ static void	ft_fillbase(char *base)
 	base[ct_fill] = 0;
 }
 
-/*
-** Converts a number to hexadecimal with or without prefix (0x).
-** @param:	- [long long] number to be converted
-**			- [short] if prefix is needed
-** @return:	[char *] number converted to hexadecimal
-*/
+/**
+ * Converts a number to hexadecimal with or without prefix (0x).
+ * @param	n [long long] number to be converted
+ * @param	has_pfx [short] if prefix is needed
+ * @returns	[char *] number converted to hexadecimal
+**/
 char	*ft_itoh(long long n, short has_pfx)
 {
 	char	base[17];
@@ -56,12 +56,12 @@ char	*ft_itoh(long long n, short has_pfx)
 		return (ft_itoa_base_prefix(n, base, "0x"));
 }
 
-/*
-** Converts an unsigned number to hexadecimal with or without prefix (0x).
-** @param:	- [unsigned long long] number to be converted
-**			- [short] if prefix is needed
-** @return:	[char *] number converted to hexadecimal
-*/
+/**
+ * Converts an unsigned number to hexadecimal with or without prefix (0x).
+ * @param	n [unsigned long long] number to be converted
+ * @param	has_pfx [short] if prefix is needed
+ * @returns [char *] number converted to hexadecimal
+**/
 char	*ft_uitoh(unsigned long long n, short has_pfx)
 {
 	char	base[17];
