@@ -115,7 +115,8 @@ All available **Makefile** commands :
     - `ft_bzero`      : Sets the first 'n' bytes of the area starting at 's' to zero (bytes containing char '\0').
     - `ft_malloc`     : Allocates memory for an array of 'nelem' elements of size 'elsize' each and returns a pointer to the allocated memory. If (elsize == sizeof(char)) the memory is filled with spaces (' ') and it is null ('\0') terminated, else the memory is set to zero.
     - `ft_calloc`     : Allocates memory for an array of 'nelem' elements of size 'elsize' each and returns a pointer to the allocated memory. The memory is set to zero.
-    - `ft_free`       : Frees the memory pointed by '\*pt', if exists, and sets '\*pt' to NULL.
+    - `ft_free`       : Frees the memory pointed by '\*pt' and, if exists, sets it to NULL.
+	- `ft_freemtx`    : Frees the memory pointed by the matrix '**pt' and, if exists, sets it to NULL.
     - `ft_swap`       : Swaps the memory of '\*s1' and '\*s2'. If 'tofree' isn't 0, '\*s2' is freed.
     - `ft_memset`     : Fills the first 'n' bytes of the memory area pointed to by 's' with the constant byte 'c'.
     - `ft_memcpy`     : Copies 'n' bytes from memory area 'src' to memory area 'dest'. The memory areas must not overlap.

@@ -6,13 +6,13 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 02:58:42 by tosilva           #+#    #+#             */
-/*   Updated: 2021/10/27 12:43:06 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/11/07 02:25:08 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**ft_freemtx(char **mtz, unsigned int rows)
+static char	**ft_mtxfree(char **mtz, unsigned int rows)
 {
 	while (rows-- != 0)
 		free(mtz[rows]);
@@ -70,7 +70,7 @@ static char	**ft_splitwords(char const *s, char c, size_t *row, size_t *col)
 				*row = *row + 1;
 			strs[*row] = (char *)malloc((ft_collen(s, c) + 1) * sizeof(char));
 			if (!strs[*row])
-				return (strs = ft_freemtx(strs, nrrows));
+				return (strs = ft_mtxfree(strs, nrrows));
 			*col = 0;
 		}
 		if (*s != c)

@@ -6,7 +6,7 @@
 /*   By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 01:48:25 by tosilva           #+#    #+#             */
-/*   Updated: 2021/10/23 13:25:24 by tosilva          ###   ########.fr       */
+/*   Updated: 2021/11/07 01:52:53 by tosilva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void			ft_bzero(void *s, size_t n);
 void			*ft_malloc(size_t nelem, size_t elsize);
 void			*ft_calloc(size_t nelem, size_t elsize);
 void			ft_free(void **pt);
+void			ft_freemtx(void ***pt);
 void			ft_swap(void **s1, void **s2, short tofree);
 void			*ft_memset(void *s, int c, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);

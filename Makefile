@@ -6,7 +6,7 @@
 #    By: tosilva <tosilva@student.42lisboa.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 18:49:28 by tosilva           #+#    #+#              #
-#    Updated: 2021/10/23 12:54:37 by tosilva          ###   ########.fr        #
+#    Updated: 2021/11/07 02:25:33 by tosilva          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,6 +101,7 @@ MATH_FILES	:= ft_pow.c \
 MEM_FILES	:= ft_bzero.c \
 				ft_calloc.c \
 				ft_free.c \
+				ft_freemtx.c \
 				ft_malloc.c \
 				ft_memccpy.c \
 				ft_memchr.c \
